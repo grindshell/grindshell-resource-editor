@@ -1,0 +1,2 @@
+- [solid-ui installation instructions](https://www.solid-ui.com/docs/installation/tauri)
+- [dark mode](https://www.solid-ui.com/docs/dark-mode/vite)
