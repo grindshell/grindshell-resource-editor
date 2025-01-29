@@ -12,6 +12,10 @@ export class Tag {
     this.extra = extra;
   }
 
+  /**
+   * Custom toString implementation.
+   * @returns a string in format `key:value[:extra*]`
+   */
   toString() {
     let extras = "";
     this.extra.forEach((v) => {
@@ -56,6 +60,10 @@ export class Tag {
    */
   equalsTag(other: Tag) {
     return this.key === other.key && this.value === other.value;
+  }
+
+  static default() {
+    return new Tag("default", "default", []);
   }
 }
 

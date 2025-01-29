@@ -164,10 +164,8 @@ export function Layout(props: ParentProps) {
     <SidebarProvider>
       <AppSidebar selectedItem={selectedItem} setSelectedItem={setSelectedItem} />
       <SidebarInset>
-        <div>
-          <Header selectedItem={selectedItem} />
-          {props.children}
-        </div>
+        <Header selectedItem={selectedItem} />
+        {props.children}
       </SidebarInset>
     </SidebarProvider>
   );

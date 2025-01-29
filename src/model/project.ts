@@ -3,17 +3,30 @@ import { MapData } from "./map-data";
 
 export class Project {
   projectName = "New Project";
-  mapData: MapData | null = null;
-  enemyData: EnemyData | null = null;
+  mapData: MapData;
+  enemyData: EnemyData;
 
-  constructor() {
+  constructor(args?: {
+    projectName?: string,
+    mapData?: MapData,
+    enemyData?: EnemyData;
+  }) {
+    if (args?.projectName) {
+      this.projectName = args.projectName;
+    }
 
+    this.mapData = args?.mapData ?? new MapData({
+      name: "New Map"
+    });
+    this.enemyData = args?.enemyData ?? new EnemyData();
   }
 
   /**
    * A default project with no options.
    */
   static default() {
-    return new Project();
+    const project = new Project();
+
+    return project;
   }
 }

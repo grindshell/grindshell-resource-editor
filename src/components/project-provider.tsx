@@ -6,7 +6,7 @@ import { exists, readTextFile, create, BaseDirectory } from "@tauri-apps/plugin-
 const PROJECT_FILE_NAME = "project.json";
 const LOCAL_STORAGE_KEY = "project-data";
 
-type ProjectData = {
+export type ProjectData = {
   project: Project,
   undoRedo: string[];
 };
@@ -22,7 +22,7 @@ type ProjectProviderProps = ParentProps & {
 };
 
 export function ProjectProvider(props: ProjectProviderProps) {
-  console.debug("project provider");
+  console.info("entering project provider");
 
   const [projectData, setProjectData] = createStore<ProjectData>({
     project: Project.default(),
